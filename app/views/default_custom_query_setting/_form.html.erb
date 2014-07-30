@@ -1,0 +1,13 @@
+<%= labelled_form_for @default_query ||= ProjectsDefaultQuery.init(@project),
+                      as: :settings,
+                      url: default_custom_query_setting_update_path(@project),
+                      html: { method: :put } do |f| %>
+
+  <%= error_messages_for @default_query %>
+
+  <div class="box tabular">
+    <p><%= f.select :query_id, ProjectsDefaultQuery.selectable_queries_for(@project)
+                                                   .collect {|q| [ q.name, q.id ] }, include_blank: true %></p>
+  </div>
+  <%= submit_tag l(:button_save) %>
+<% end %>
