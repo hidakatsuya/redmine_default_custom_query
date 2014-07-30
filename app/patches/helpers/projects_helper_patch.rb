@@ -1,7 +1,12 @@
 require_dependency 'projects_helper'
 
-module ProjectsHelper
-  unloadable
+module ProjectsHelperPatch
+  extend ActiveSupport::Concern
+
+  included do
+    unloadable
+    alias_method_chain :project_settings_tabs, :default_query_setting_tab
+  end
 
   def project_settings_tabs_with_default_query_setting_tab
     tabs = project_settings_tabs_without_default_query_setting_tab
@@ -17,5 +22,6 @@ module ProjectsHelper
     end
     tabs
   end
-  alias_method_chain :project_settings_tabs, :default_query_setting_tab
 end
+
+ProjectsHelper.send :include, ProjectsHelperPatch
