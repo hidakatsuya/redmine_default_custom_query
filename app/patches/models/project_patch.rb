@@ -14,7 +14,13 @@ module DefaultCustomQuery
     end
 
     def selectable_queries_as_default
-      queries.visible.where(is_public: true)
+      redmine_ver = Redmine::VERSION.to_s
+
+      if redmine_ver < '2.4'
+        queries.where(is_public: true)
+      else
+        queries.where(visibility: Query::VISIBILITY_PUBLIC)
+      end
     end
 
     def init_projects_default_query

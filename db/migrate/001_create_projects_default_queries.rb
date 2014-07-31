@@ -6,7 +6,7 @@ class CreateProjectsDefaultQueries < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :projects_default_queries, :project_id
+    add_index :projects_default_queries, :project_id, unique: true
     add_index :projects_default_queries, :query_id
   end
 end
