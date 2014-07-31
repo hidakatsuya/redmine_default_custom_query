@@ -4,8 +4,8 @@ Redmine plugin for setting the default custom query to issues list per projects.
 
 ## NOTICE
 
-This plugin has no test code yet, so there may be a lot of bugs in this plug-in.  
-I have a plan to release version 0.1.0 to write the test code to this weekend (maybe).
+This plugin has no test code yet, so there may be a lot of bugs.  
+I have a plan to release version 0.1.0 to write test code in this weekend (maybe).
 
 ## Supported versions
 
@@ -45,9 +45,9 @@ Then, remove `plugins/redmine_default_custom_query` directory.
 ### Pull Request
 
   1. Fork it
-  2. Create your feature branch (``git checkout -b new-feature``)
-  3. Commit your changes (``git commit -am ``add some new feature``)
-  4. Push to the branch (``git push origin new-feature``)
+  2. Create your feature branch: `git checkout -b new-feature`
+  3. Commit your changes: `git commit -am 'add some new feature'`
+  4. Push to the branch: `git push origin new-feature`
   5. Create new Pull Request
 
 ### Report bugs
