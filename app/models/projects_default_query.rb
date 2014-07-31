@@ -16,8 +16,11 @@ class ProjectsDefaultQuery < ActiveRecord::Base
     default_query = super
     return unless default_query
 
-    if !new_record? && !default_query.public_visibility?
-      update_attribute :query_id, nil
+    unless new_record?
+      unless default_query.public_visibility? &&
+             default_query.project == project
+        update_attribute :query_id, nil
+      end
     end
     default_query
   end
