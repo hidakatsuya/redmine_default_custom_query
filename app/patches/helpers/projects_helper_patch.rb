@@ -18,7 +18,7 @@ module DefaultCustomQuery
           name: 'default_custom_query',
           action: :manage_default_query,
           partial: 'default_custom_query_setting/form',
-          label: :label_project_default_custom_query
+          label: :'default_custom_query.label_setting'
         }
       end
       tabs

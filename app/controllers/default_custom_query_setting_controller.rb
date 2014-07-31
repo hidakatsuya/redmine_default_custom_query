@@ -7,15 +7,8 @@ class DefaultCustomQuerySettingController < ApplicationController
   def update
     @default_query = ProjectsDefaultQuery.find_or_initialize_by_project_id(@project.id)
     @default_query.safe_attributes = params[:settings]
+    @default_query.save
 
-    if @default_query.save
-      redirect_to settings_project_path(@project, tab: 'default_custom_query'),
-                  notice: l(:notice_successful_update)
-    else
-      render 'edit'
-    end
-  end
-
-  def edit
+    render partial: 'form'
   end
 end

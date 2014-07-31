@@ -8,7 +8,7 @@ end
 
 # Load patches for Redmine
 Rails.configuration.to_prepare do
-  Dir[DefaultCustomQuery.root.join('app/patches/**/*_patch.rb')].each {|f| require f }
+  Dir[DefaultCustomQuery.root.join('app/patches/**/*_patch.rb')].each {|f| require_dependency f }
 end
 
 # Load hooks

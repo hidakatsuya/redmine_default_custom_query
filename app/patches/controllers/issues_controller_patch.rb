@@ -2,6 +2,8 @@ require_dependency 'issues_controller'
 
 module DefaultCustomQuery
   module IssuesControllerPatch
+    unloadable
+
     extend ActiveSupport::Concern
 
     included do
@@ -60,7 +62,7 @@ module DefaultCustomQuery
     end
 
     def show_all?
-      params[:all]
+      params[:without_default]
     end
 
     def default_query_module_enabled?

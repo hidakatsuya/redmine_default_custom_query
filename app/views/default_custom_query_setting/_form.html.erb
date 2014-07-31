@@ -1,13 +1,19 @@
-<%= labelled_form_for @default_query ||= ProjectsDefaultQuery.init(@project),
+<%= labelled_form_for @default_query ||= @project.init_projects_default_query,
                       as: :settings,
                       url: default_custom_query_setting_update_path(@project),
-                      html: { method: :put } do |f| %>
+                      remote: true, method: :put, html: { id: 'default-query-setting' } do |f| %>
 
   <%= error_messages_for @default_query %>
 
   <div class="box tabular">
-    <p><%= f.select :query_id, @project.queries.visible.where(is_public: true)
-                                       .collect {|q| [ q.name, q.id ] }, include_blank: true %></p>
+    <p><%= f.select :query_id, @project.selectable_queries_as_default.collect {|q| [ q.name, q.id ] },
+                               include_blank: true %></p>
   </div>
   <%= submit_tag l(:button_save) %>
 <% end %>
+
+<script>
+  $('#default-query-setting').on('ajax:success', function(data, result, xhr) {
+    $('#tab-content-default_custom_query').html(result);
+  });
+</script>

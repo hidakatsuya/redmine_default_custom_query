@@ -1,0 +1,10 @@
+ja:
+  project_module_default_custom_query: デフォルトカスタムクエリ
+  permission_manage_default_query: デフォルトカスタムクエリの管理
+
+  # Labels for projects_default_queries column
+  field_query: デフォルトクエリ
+
+  default_custom_query:
+    label_setting: デフォルトカスタムクエリ
+    label_view_default_issues: デフォルトチケット一覧を見る

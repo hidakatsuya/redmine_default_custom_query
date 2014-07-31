@@ -1,3 +1,10 @@
-# English strings go here for Rails i18n
 en:
-  # my_label: "My label"
+  project_module_default_custom_query: Default custom query
+  permission_manage_default_query: Manage default query
+
+  # Labels for projects_default_queries column
+  field_query: Default custom query
+
+  default_custom_query:
+    label_setting: Default custom query
+    label_view_default_issues: View default issues

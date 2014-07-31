@@ -1,8 +1,9 @@
 Redmine::Plugin.register :redmine_default_custom_query do
   name 'Redmine Default Custom Query plugin'
   author 'Katsuya Hidaka'
-  description 'The default custom query per projects'
+  description 'The default custom query for issues per projects'
   version '0.1.0'
+  requires_redmine '2.3'
   url 'https://github.com/hidakatsuya/redmine_default_custom_query'
   author_url 'https://github.com/hidakatsuya'
 
