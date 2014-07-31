@@ -3,16 +3,14 @@ class ProjectsDefaultQuery < ActiveRecord::Base
 
   include Redmine::SafeAttributes
 
-  belongs_to :project, dependent: :destroy
-  belongs_to :query, dependent: :destroy
+  belongs_to :project, dependent: :delete
+  belongs_to :query, dependent: :delete
 
   safe_attributes 'query_id'
 
-  def self.init(project)
-    find_or_initialize_by_project_id(project)
-  end
-
-  def self.selectable_queries_for(project)
-    IssueQuery.visible.where(project_id: project, is_public: true)
+  class << self
+    def init(project)
+      find_or_initialize_by_project_id(project)
+    end
   end
 end
