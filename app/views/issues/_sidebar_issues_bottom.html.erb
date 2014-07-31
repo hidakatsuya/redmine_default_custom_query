@@ -1,4 +1,4 @@
-<% if @project.module_enabled?(:default_custom_query) && @project.default_query.present? %>
+<% if @project && @project.module_enabled?(:default_custom_query) && @project.default_query.present? %>
 <script>
   (function() {
     var allIssuesPath = '<%=j project_issues_path(@project, set_filter: 1) %>';

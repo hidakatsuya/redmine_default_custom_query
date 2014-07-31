@@ -66,7 +66,7 @@ module DefaultCustomQuery
     end
 
     def default_query_module_enabled?
-      @project.module_enabled?(:default_custom_query)
+      @project && @project.module_enabled?(:default_custom_query)
     end
   end
 end
