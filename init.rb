@@ -11,7 +11,4 @@ Redmine::Plugin.register :redmine_default_custom_query do
   end
 end
 
-# Load patches for Redmine
-Rails.configuration.to_prepare do
-  Dir[File.expand_path('app/patches/**/*_patch.rb', File.dirname(__FILE__))].each {|f| require f }
-end
+require_relative 'lib/default_custom_query'
