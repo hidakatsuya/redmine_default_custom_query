@@ -14,7 +14,7 @@ I have a plan to release version 0.1.0 to write the test code to this weekend (m
 
 ## Installation
 
-`git clone` or copy unarchive plugin to `plugins/redmine_default_custom_query` on your Redmine path.
+`git clone` or copy unarchive (an archive file is  [here](https://github.com/hidakatsuya/redmine_default_custom_query/releases)) plugin to `plugins/redmine_default_custom_query` on your Redmine path.
 
 ```
 $ git clone https://github.com/hidakatsuya/redmine_issue_wiki_journal.git /path/to/your-redmine/plugins
