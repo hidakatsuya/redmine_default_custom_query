@@ -8,3 +8,7 @@ en:
   default_custom_query:
     label_setting: Default custom query
     label_view_default_issues: View default issues
+    label_queries_for_all_projects: For all projects
+    label_queries_for_current_project: For current project
+
+    text_allowed_queries: Public (to any users) queries only selectable

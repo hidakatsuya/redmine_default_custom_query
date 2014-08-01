@@ -43,7 +43,7 @@ module DefaultCustomQuery
     private
 
     def find_default_query
-      ProjectsDefaultQuery.find_by_project_id(@project).try(:query)
+      @project.default_query
     end
 
     def apply_default_query!

@@ -13,16 +13,13 @@ class ProjectsDefaultQuery < ActiveRecord::Base
   validate :query_must_be_selectable_query
 
   def query
-    default_query = super
-    return unless default_query
+    issue_query = super
+    return unless issue_query
 
-    unless new_record?
-      unless default_query.public_visibility? &&
-             default_query.project == project
-        update_attribute :query_id, nil
-      end
+    unless new_record? || selectable_query?(issue_query)
+      update_attribute :query_id, nil
     end
-    default_query
+    issue_query
   end
 
   private
@@ -30,8 +27,15 @@ class ProjectsDefaultQuery < ActiveRecord::Base
   def query_must_be_selectable_query
     return if errors.any? || query_id.blank? || !query_id_changed?
 
-    unless project.queries.only_public.exists?(query_id)
+    issue_query = IssueQuery.find_by_id(query_id)
+
+    unless selectable_query?(issue_query)
       errors.add :query_id, :invalid
     end
+  end
+
+  def selectable_query?(query)
+    query && query.public_visibility? &&
+    (query.project.nil? || query.project == project)
   end
 end

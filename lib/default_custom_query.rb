@@ -13,3 +13,6 @@ end
 
 # Load hooks
 Dir[DefaultCustomQuery.root.join('app/hooks/*_hook.rb')].each {|f| require f }
+
+# Load application helper
+ActionView::Base.send :include, ::DefaultCustomQueryHelper

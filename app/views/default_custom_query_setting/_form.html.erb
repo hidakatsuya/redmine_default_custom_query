@@ -6,8 +6,10 @@
   <%= error_messages_for @default_query %>
 
   <div class="box tabular">
-    <p><%= f.select :query_id, @project.queries.only_public.collect {|q| [ q.name, q.id ] },
-                               include_blank: true %></p>
+    <p>
+      <%= f.select :query_id, options_for_selectable_queries(@project), include_blank: true %><br>
+      <em><%=l 'default_custom_query.text_allowed_queries' %></em>
+    </p>
   </div>
   <%= submit_tag l(:button_save) %>
 <% end %>

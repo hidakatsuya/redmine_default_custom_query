@@ -8,3 +8,7 @@ ja:
   default_custom_query:
     label_setting: デフォルトカスタムクエリ
     label_view_default_issues: デフォルトチケット一覧を見る
+    label_queries_for_all_projects: 全プロジェクト向け
+    label_queries_for_current_project: 現在プロジェクト
+
+    text_allowed_queries: 公開クエリ（すべてのユーザ）のみ選択可能
