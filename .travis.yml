@@ -1,20 +1,20 @@
 language: ruby
 
-services:
-  - mysql
-
 rvm:
   - 1.9.3
+  - 2.1.1
 
 env:
   - REDMINE_VER=2.3.4
+  - REDMINE_VER=2.4.6
+  - REDMINE_VER=2.5.2
 
 gemfile:
   - $REDMINE_PATH/Gemfile
 
 before_install:
   - export PLUGIN_NAME=redmine_default_custom_query
-  - export DB=mysql
+  - export DB=sqlite
   - export REDMINE_PATH=$HOME/redmine
   - svn co http://svn.redmine.org/redmine/tags/$REDMINE_VER $REDMINE_PATH
   - ln -s $TRAVIS_BUILD_DIR $REDMINE_PATH/plugins/$PLUGIN_NAME
@@ -22,7 +22,6 @@ before_install:
   - cd $REDMINE_PATH
 
 before_script:
-  - bundle exec rake db:create
   - bundle exec rake db:migrate
   - bundle exec rake redmine:plugins:migrate
 

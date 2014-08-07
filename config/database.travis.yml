@@ -1,5 +1,4 @@
 test:
-  adapter: mysql2
-  database: redmine
-  username: travis
-  encoding: utf8
+  adapter: sqlite3
+  database: ":memory:"
+  timeout: 500
