@@ -9,6 +9,10 @@ env:
   - REDMINE_VER=2.4.6
   - REDMINE_VER=2.5.2
 
+env:
+  global:
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+
 gemfile:
   - $REDMINE_PATH/Gemfile
 
