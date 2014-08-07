@@ -19,7 +19,7 @@ module DefaultCustomQuery
         # Nothing to do
       when api_request?
         # Nothing to do
-      when show_all?
+      when show_all_issues?
         params[:set_filter] = 1
       when filter_applied?
         # Nothing to do
@@ -33,10 +33,14 @@ module DefaultCustomQuery
     end
 
     def retrieve_query_from_session_with_default_custom_query
-      if session[:query]
+      if default_query_module_enabled?
+        if session[:query]
+          retrieve_query_from_session_without_default_custom_query
+        else
+          @query = find_default_query
+        end
+      else
         retrieve_query_from_session_without_default_custom_query
-      elsif default_query_module_enabled?
-        @query = find_default_query
       end
     end
 
@@ -61,7 +65,7 @@ module DefaultCustomQuery
       params[:set_filter] && [:op, :f].all? {|k| !params.key?(k) }
     end
 
-    def show_all?
+    def show_all_issues?
       params[:without_default]
     end
 

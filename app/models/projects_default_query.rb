@@ -10,21 +10,20 @@ class ProjectsDefaultQuery < ActiveRecord::Base
 
   validates :project_id, :query_id, numericality: { allow_nil: true }
   validates :project_id, uniqueness: true, presence: true
-  validate :query_must_be_selectable_query
+  validate :query_must_be_selectable
 
   def query
-    issue_query = super
-    return unless issue_query
+    return unless super
 
-    unless new_record? || selectable_query?(issue_query)
+    unless new_record? || selectable_query?(super)
       update_attribute :query_id, nil
     end
-    issue_query
+    super
   end
 
   private
 
-  def query_must_be_selectable_query
+  def query_must_be_selectable
     return if errors.any? || query_id.blank? || !query_id_changed?
 
     issue_query = IssueQuery.find_by_id(query_id)

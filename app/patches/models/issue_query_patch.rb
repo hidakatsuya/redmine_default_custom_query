@@ -7,7 +7,7 @@ module DefaultCsutomQuery
     included do
       unloadable
 
-      has_many :projects_default_query, dependent: :nullify, foreign_key: :query_id
+      has_many :projects_default_queries, dependent: :nullify, foreign_key: :query_id
 
       scope :only_public, -> {
         if Redmine::VERSION.to_s < '2.4'

@@ -9,15 +9,15 @@ module DefaultCustomQuery
     included do
       unloadable
 
-      has_one :projects_default_query, dependent: :delete
+      has_many :default_queries, dependent: :delete_all, class_name: 'ProjectsDefaultQuery'
     end
 
     def default_query
-      projects_default_query.try(:query)
+      default_queries.first.try :query
     end
 
-    def init_projects_default_query
-      projects_default_query || build_projects_default_query
+    def init_default_query
+      default_queries.first || default_queries.new
     end
   end
 end

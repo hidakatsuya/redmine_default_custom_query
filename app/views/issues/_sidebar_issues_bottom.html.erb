@@ -1,5 +1,5 @@
 <% if @project && @project.module_enabled?(:default_custom_query) && @project.default_query.present? %>
-<script>
+<%= javascript_tag id: 'add-default-issues-button' do %>
   (function() {
     var allIssuesPath = '<%=j project_issues_path(@project, set_filter: 1) %>';
   
@@ -12,5 +12,5 @@
                                           .text('<%=j l('default_custom_query.label_view_default_issues') %>');
     showIssuesButton.before(showDefaultIssuesButton).before('<br>');
   })();
-</script>
+<% end %>
 <% end %>

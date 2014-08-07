@@ -1,4 +1,4 @@
-<%= labelled_form_for @default_query ||= @project.init_projects_default_query,
+<%= labelled_form_for @default_query ||= @project.init_default_query,
                       as: :settings,
                       url: default_custom_query_setting_update_path(@project),
                       remote: true, method: :put, html: { id: 'default-query-setting' } do |f| %>
