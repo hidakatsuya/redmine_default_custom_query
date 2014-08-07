@@ -83,7 +83,7 @@ class IssuesWithDefaultQueryTest < ActionController::IntegrationTest
     context 'when changed to ROLES the visibility of the default query' do
       should 'unset the default query' do
         if Redmine::VERSION.to_s < '2.4'
-          omit '2.3 or less has no ROLES visility'
+          skip '2.3 or less has no ROLES visility'
         else
           @default_query.visibility = Query::VISIBILITY_ROLES
           @default_query.roles << create(:role)
