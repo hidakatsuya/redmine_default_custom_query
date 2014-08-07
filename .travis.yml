@@ -9,16 +9,13 @@ env:
   - REDMINE_VER=2.4.6
   - REDMINE_VER=2.5.2
 
-env:
-  global:
-    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-
 gemfile:
   - $REDMINE_PATH/Gemfile
 
 before_install:
   - export PLUGIN_NAME=redmine_default_custom_query
   - export DB=sqlite
+  - export NOKOGIRI_USE_SYSTEM_LIBRARIES=true
   - export REDMINE_PATH=$HOME/redmine
   - svn co http://svn.redmine.org/redmine/tags/$REDMINE_VER $REDMINE_PATH
   - ln -s $TRAVIS_BUILD_DIR $REDMINE_PATH/plugins/$PLUGIN_NAME
