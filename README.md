@@ -1,16 +1,20 @@
-# Redmine Default Custom Query Plugin
+# Redmine Default Custom Query
 
-Redmine plugin for setting the default custom query to issues list per projects.
+Redmine plugin for setting the default custom query to issues per projects.
 
-## NOTICE
+![Configure the default query per projects](https://raw.githubusercontent.com/wiki/hidakatsuya/redmine_default_custom_query/images/select-default-query-per-projects.png)
 
-This plugin has no test code yet, so there may be a lot of bugs.  
-I have a plan to release version 0.1.0 to write test code in this weekend (maybe).
+![Apply the default query](https://raw.githubusercontent.com/wiki/hidakatsuya/redmine_default_custom_query/images/issues-with-default-query.png)
+
+## Usage
+
+  1. Enable the default custom query module in your project settings
+  2. Setting the default query to open the "Default custom query" tab
 
 ## Supported versions
 
   * Redmine 2.3.x, 2.4.x, 2.5.x
-  * Ruby 1.9.3, 2.0.0
+  * Ruby 1.9.3, 2.1.1
 
 ## Installation
 
