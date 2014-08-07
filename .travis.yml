@@ -9,6 +9,9 @@ rvm:
 env:
   - REDMINE_VER=2.3.4
 
+gemfile:
+  - $REDMINE_PATH/Gemfile
+
 before_install:
   - export PLUGIN_NAME=redmine_default_custom_query
   - export DB=mysql
@@ -17,7 +20,6 @@ before_install:
   - ln -s $TRAVIS_BUILD_DIR $REDMINE_PATH/plugins/$PLUGIN_NAME
   - cp config/database.travis.yml $REDMINE_PATH/config/database.yml
   - cd $REDMINE_PATH
-  - gem install factory_girl
 
 before_script:
   - bundle exec rake db:create
