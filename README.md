@@ -20,17 +20,17 @@ Redmine plugin for setting the default custom query to issues per projects.
 
 ## Installation
 
-`git clone` or copy unarchive (an archive file is  [here](https://github.com/hidakatsuya/redmine_default_custom_query/releases)) plugin to `plugins/redmine_default_custom_query` on your Redmine path.
+`git clone` or copy an unarchived (archived file is [here](https://github.com/hidakatsuya/redmine_default_custom_query/releases)) plugin to `plugins/redmine_default_custom_query` on your Redmine path.
 
 ```
-$ git clone https://github.com/hidakatsuya/redmine_issue_wiki_journal.git /path/to/your-redmine/plugins
+$ git clone https://github.com/hidakatsuya/redmine_default_custom_query.git /path/to/your-redmine/plugins/redmine_default_custom_query
 ```
 
 Then, migrate:
 
 ```
 $ cd /path/to/your-redmine
-$ rake redmine:plugins:migrate NAME=redmine_default_custom_query
+$ rake redmine:plugins:migrate NAME=redmine_default_custom_query RAILS_ENV=production
 ```
 
 That's all.
@@ -41,12 +41,20 @@ At first, rollback schema:
 
 ```
 $ cd /path/to/your-redmine
-$ rake redmine:plugins:migrate NAME=redmine_default_custom_query VERSION=0
+$ rake redmine:plugins:migrate NAME=redmine_default_custom_query VERSION=0 RAILS_ENV=production
 ```
 
 Then, remove `plugins/redmine_default_custom_query` directory.
 
 ## Contributing
+
+### How to test
+
+```
+$ cd /path/to/redmine
+$ bundle install
+$ bundle exec rake redmine:plugins:test NAME=redmine_default_custom_query
+```
 
 ### Pull Request
 
