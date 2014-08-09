@@ -1,6 +1,7 @@
 # Redmine Default Custom Query
 
 [![Build Status](https://travis-ci.org/hidakatsuya/redmine_default_custom_query.svg)](https://travis-ci.org/hidakatsuya/redmine_default_custom_query)
+[![Code Climate](https://codeclimate.com/github/hidakatsuya/redmine_default_custom_query/badges/gpa.svg)](https://codeclimate.com/github/hidakatsuya/redmine_default_custom_query)
 
 Redmine plugin for setting the default custom query to issues per projects.
 
