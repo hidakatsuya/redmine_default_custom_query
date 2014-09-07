@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/hidakatsuya/redmine_default_custom_query.svg)](https://travis-ci.org/hidakatsuya/redmine_default_custom_query)
 [![Code Climate](https://codeclimate.com/github/hidakatsuya/redmine_default_custom_query/badges/gpa.svg)](https://codeclimate.com/github/hidakatsuya/redmine_default_custom_query)
 
-Redmine plugin for setting the default custom query to issues per projects.
+Redmine plugin for setting the default custom query of Issues for each project.
 
 ![Configure the default query per projects](https://raw.githubusercontent.com/wiki/hidakatsuya/redmine_default_custom_query/images/select-default-query-per-projects.png)
 
@@ -11,8 +11,8 @@ Redmine plugin for setting the default custom query to issues per projects.
 
 ## Usage
 
-  1. Enable the default custom query module in your project settings
-  2. Setting the default query to open the "Default custom query" tab
+  1. Enable Default Custom Query module in your project setting
+  2. Select the default custom query in your Default Custom Query setting
 
 ## Supported versions
 
@@ -21,7 +21,7 @@ Redmine plugin for setting the default custom query to issues per projects.
 
 ## Installation
 
-`git clone` or copy an unarchived (archived file is [here](https://github.com/hidakatsuya/redmine_default_custom_query/releases)) plugin to `plugins/redmine_default_custom_query` on your Redmine path.
+`git clone` or copy an unarchived plugin(archived file is [here](https://github.com/hidakatsuya/redmine_default_custom_query/releases)) to `plugins/redmine_default_custom_query` on your Redmine path.
 
 ```
 $ git clone https://github.com/hidakatsuya/redmine_default_custom_query.git /path/to/your-redmine/plugins/redmine_default_custom_query
