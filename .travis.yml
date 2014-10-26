@@ -9,7 +9,6 @@ env:
   - REDMINE_REPOS=branches/2.5-stable
   - REDMINE_REPOS=branches/2.4-stable
   - REDMINE_REPOS=branches/2.3-stable
-  - REDMINE_REPOS=trunk
 
 gemfile:
   - $REDMINE_PATH/Gemfile
