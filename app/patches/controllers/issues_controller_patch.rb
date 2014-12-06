@@ -27,7 +27,7 @@ module DefaultCustomQuery
         apply_default_query!
       when session[:query]
         query_id, project_id = session[:query].values_at(:id, :project_id)
-        unless query_id && project_id == @project.id && available_query?(query_id)
+        unless query_id && (project_id == @project.id) && available_query?(query_id)
           apply_default_query!
         end
       else
