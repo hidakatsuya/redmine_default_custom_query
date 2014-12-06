@@ -11,15 +11,15 @@ Redmine plugin for setting the default custom query of Issues for each project.
 
 ## Usage
 
-  1. Enable Default Custom Query module in your project setting
-  2. Select the default custom query in your Default Custom Query setting
+  1. Enable the Default Custom Query module in your project
+  2. Select a custom query to set to default in setting for your project
 
 ## Supported versions
 
   * Redmine 2.3, 2.4, 2.5, 2.6
   * Ruby 1.9.3, 2.1.3
 
-## Installation
+## Install
 
 `git clone` or copy an unarchived plugin(archived file is [here](https://github.com/hidakatsuya/redmine_default_custom_query/releases)) to `plugins/redmine_default_custom_query` on your Redmine path.
 
@@ -36,7 +36,7 @@ $ rake redmine:plugins:migrate NAME=redmine_default_custom_query RAILS_ENV=produ
 
 That's all.
 
-## Uninstallation
+## Uninstall
 
 At first, rollback schema:
 
@@ -47,7 +47,7 @@ $ rake redmine:plugins:migrate NAME=redmine_default_custom_query VERSION=0 RAILS
 
 Then, remove `plugins/redmine_default_custom_query` directory.
 
-## Contributing
+## Contribute
 
 ### How to test
 
@@ -67,7 +67,7 @@ $ bundle exec rake redmine:plugins:test NAME=redmine_default_custom_query
 
 ### Report bugs
 
-Please report [here](https://github.com/hidakatsuya/redmine_default_custom_query/issues/new).
+Please report from [here](https://github.com/hidakatsuya/redmine_default_custom_query/issues/new). 
 
 ## Copyright
 
