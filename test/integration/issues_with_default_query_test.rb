@@ -96,5 +96,25 @@ class IssuesWithDefaultQueryTest < ActionController::IntegrationTest
         end
       end
     end
+
+    context 'when view /projects/foo/issues after select a global query in other project' do
+      setup do
+        @other_project = create(:project, :with_default_custom_query)
+        add_member @other_project, @user, create(:role_with_manage_default_query)
+
+        # @other_project's global query
+        @global_query = create(:issue_query, :public, project: nil)
+
+        # select @global_query in @other_project
+        get project_issues_path(@other_project, query_id: @global_query.id)
+      end
+
+      should 'apply default query of current project' do
+        get project_issues_path(@project)
+
+        assert_response :success
+        assert_apply_query @default_query
+      end
+    end
   end
 end

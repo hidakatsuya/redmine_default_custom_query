@@ -26,7 +26,10 @@ module DefaultCustomQuery
       when filter_cleared?
         apply_default_query!
       when session[:query]
-        apply_default_query! unless session[:query][:id]
+        query_id, project_id = session[:query].values_at(:id, :project_id)
+        unless query_id && project_id == @project.id && available_query?(query_id)
+          apply_default_query!
+        end
       else
         apply_default_query!
       end
@@ -71,6 +74,12 @@ module DefaultCustomQuery
 
     def default_query_module_enabled?
       @project && @project.module_enabled?(:default_custom_query)
+    end
+
+    def available_query?(query_id)
+      IssueQuery.only_public
+                .where('project_id is null or project_id = ?', @project.id)
+                .where(id: query_id).exists?
     end
   end
 end
