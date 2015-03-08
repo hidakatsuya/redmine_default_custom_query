@@ -22,4 +22,6 @@ module DefaultCustomQuery
   end
 end
 
-Project.send :include, DefaultCustomQuery::ProjectPatch
+DefaultCustomQuery::ProjectPatch.tap do |mod|
+  Project.send :include, mod unless Project.include?(mod)
+end

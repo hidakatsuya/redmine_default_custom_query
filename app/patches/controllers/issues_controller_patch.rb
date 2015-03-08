@@ -84,4 +84,6 @@ module DefaultCustomQuery
   end
 end
 
-IssuesController.send :include, DefaultCustomQuery::IssuesControllerPatch
+DefaultCustomQuery::IssuesControllerPatch.tap do |mod|
+  IssuesController.send :include, mod unless IssuesController.include?(mod)
+end
