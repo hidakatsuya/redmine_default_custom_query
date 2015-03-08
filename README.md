@@ -1,4 +1,5 @@
-# Redmine Default Custom Query
+# Redmine Default Custom Query [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/hidakatsuya/redmine_default_custom_query?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 
 [![Build Status](http://img.shields.io/travis/hidakatsuya/redmine_default_custom_query.svg?style=flat)](https://travis-ci.org/hidakatsuya/redmine_default_custom_query)
 [![Code Climate](http://img.shields.io/codeclimate/github/hidakatsuya/redmine_default_custom_query.svg?style=flat)](https://codeclimate.com/github/hidakatsuya/redmine_default_custom_query)
