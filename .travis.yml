@@ -11,7 +11,7 @@ env:
 matrix:
   exclude:
     - rvm: 2.2
-    - env: REDMINE_REPOS=branches/2.6-stable
+      env: REDMINE_REPOS=branches/2.6-stable
 
 gemfile:
   - $REDMINE_PATH/Gemfile
