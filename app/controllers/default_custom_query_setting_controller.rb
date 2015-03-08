@@ -5,8 +5,10 @@ class DefaultCustomQuerySettingController < ApplicationController
   before_filter :authorize
 
   def update
-    @default_query = ProjectsDefaultQuery.find_or_initialize_by_project_id(@project.id)
-    @default_query.safe_attributes = params[:settings]
+    settings = params[:settings]
+
+    @default_query = ProjectsDefaultQuery.initialize_for(@project.id)
+    @default_query.query_id = settings[:query_id]
 
     if @default_query.save
       session[:query] = nil

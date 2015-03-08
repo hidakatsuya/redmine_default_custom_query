@@ -16,8 +16,8 @@ Redmine plugin for setting the default custom query of Issues for each project.
 
 ## Supported versions
 
-  * Redmine 2.3, 2.4, 2.5, 2.6
-  * Ruby 1.9.3, 2.1.3
+  * Redmine 2.6, 3.0
+  * Ruby 1.9.3, 2.2
 
 ## Install
 
@@ -67,7 +67,7 @@ $ bundle exec rake redmine:plugins:test NAME=redmine_default_custom_query
 
 ### Report bugs
 
-Please report from [here](https://github.com/hidakatsuya/redmine_default_custom_query/issues/new). 
+Please report from [here](https://github.com/hidakatsuya/redmine_default_custom_query/issues/new).
 
 ## Copyright
 
