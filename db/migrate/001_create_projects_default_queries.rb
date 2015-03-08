@@ -4,7 +4,7 @@ class CreateProjectsDefaultQueries < ActiveRecord::Migration
       t.belongs_to :project
       t.belongs_to :query
 
-      t.timestamps
+      t.timestamps, null: false
     end
     add_index :projects_default_queries, :project_id, unique: true
     add_index :projects_default_queries, :query_id
