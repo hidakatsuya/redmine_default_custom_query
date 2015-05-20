@@ -1,0 +1,14 @@
+ru:
+  project_module_default_custom_query: Выбор запроса по умолчанию (фильтр задач)
+  permission_manage_default_query: Manage default query
+
+  # Labels for projects_default_queries column
+  field_query: Выбор запроса по умолчанию
+
+  default_custom_query:
+    label_setting: Выбор запроса по умолчанию
+    label_view_default_issues: Просматривать запросы по умолчанию
+    label_queries_for_all_projects: Для всех проектов
+    label_queries_for_current_project: Для текущего прооекта
+
+    text_allowed_queries: Для выбора доступны только публичные запросы (фильтры задач)
