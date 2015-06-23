@@ -1,0 +1,14 @@
+fr:
+  project_module_default_custom_query: Rapport par défaut
+  permission_manage_default_query: Gérer le rapport par défaut
+
+  # Labels for projects_default_queries column
+  field_query: Rapport par défaut
+
+  default_custom_query:
+    label_setting: Rapport par défaut
+    label_view_default_issues: Voir les demandes par défaut
+    label_queries_for_all_projects: Pour tous les projets
+    label_queries_for_current_project: Pour le projet en cours
+
+    text_allowed_queries: Seuls les rapports publics (pour tous les utilisateurs) sont sélectionnables
