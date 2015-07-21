@@ -1,0 +1,14 @@
+tr:
+  project_module_default_custom_query: Öntanımlı özel sorgu
+  permission_manage_default_query: Öntanımlı sorguyu yönet
+
+  # Labels for projects_default_queries column
+  field_query: Öntanımlı özel sorgu
+
+  default_custom_query:
+    label_setting: Öntanımlı özel sorgu
+    label_view_default_issues: Öntanımlı işleri gör
+    label_queries_for_all_projects: Tüm birimler için
+    label_queries_for_current_project: Simdiki birim için
+
+    text_allowed_queries: Herkese açık (tüm kullanıcılar) sorgular sadece seçilebilir
