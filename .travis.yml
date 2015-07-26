@@ -5,6 +5,7 @@ rvm:
   - 2.2
 
 env:
+  - REDMINE_REPOS=branches/3.1-stable
   - REDMINE_REPOS=branches/3.0-stable
   - REDMINE_REPOS=branches/2.6-stable
 
