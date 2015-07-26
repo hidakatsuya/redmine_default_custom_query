@@ -23,7 +23,7 @@ before_install:
   - export REDMINE_PATH=$HOME/redmine
   - svn co http://svn.redmine.org/redmine/$REDMINE_REPOS $REDMINE_PATH
   - ln -s $TRAVIS_BUILD_DIR $REDMINE_PATH/plugins/$PLUGIN_NAME
-  - cp .travis/database.yml $REDMINE_PATH/config/database.yml
+  - cp test/database.travis.yml $REDMINE_PATH/config/database.yml
   - cd $REDMINE_PATH
 
 before_script:
