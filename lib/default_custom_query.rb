@@ -6,13 +6,15 @@ module DefaultCustomQuery
   end
 end
 
-# Load patches for Redmine
 Rails.configuration.to_prepare do
+  # Load patches for Redmine
   Dir[DefaultCustomQuery.root.join('app/patches/**/*_patch.rb')].each {|f| require_dependency f }
+
+  # Load application helper
+  ::DefaultCustomQueryHelper.tap do |mod|
+    ActionView::Base.send :include, mod unless ActionView::Base.include?(mod)
+  end
 end
 
 # Load hooks
-Dir[DefaultCustomQuery.root.join('app/hooks/*_hook.rb')].each {|f| require f }
-
-# Load application helper
-ActionView::Base.send :include, ::DefaultCustomQueryHelper
+Dir[DefaultCustomQuery.root.join('app/hooks/*_hook.rb')].each {|f| require_dependency f }
