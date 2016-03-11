@@ -17,7 +17,7 @@ module DefaultCustomQuery
       case
       when params[:query_id].present?
         # Nothing to do
-      when api_request?
+      when api_request? || csv_request?
         # Nothing to do
       when show_all_issues?
         params[:set_filter] = 1
@@ -80,6 +80,10 @@ module DefaultCustomQuery
       IssueQuery.only_public
                 .where('project_id is null or project_id = ?', @project.id)
                 .where(id: query_id).exists?
+    end
+
+    def csv_request?
+      params[:format] == 'csv'
     end
   end
 end
