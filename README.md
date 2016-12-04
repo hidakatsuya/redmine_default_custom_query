@@ -17,7 +17,7 @@ Redmine plugin for setting the default custom query of Issues for each project.
 
 ## Supported versions
 
-  * Redmine 2.6, 3.0, 3.1
+  * Redmine 3.1, 3.2, 3.3
   * Ruby 2.2, 2.3
 
 ## Install
