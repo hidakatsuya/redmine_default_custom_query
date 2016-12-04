@@ -2,10 +2,6 @@ require File.expand_path(File.dirname(__FILE__) + '/../../../test/test_helper')
 
 Dir[DefaultCustomQuery.root.join('test/factories/*.rb')].each {|f| require f }
 
-if Redmine::VERSION.to_s < '3.0'
-  Redmine::IntegrationTest = ActionDispatch::IntegrationTest
-end
-
 module DefaultCustomQuery
   module TestHelper
     include FactoryGirl::Syntax::Methods
