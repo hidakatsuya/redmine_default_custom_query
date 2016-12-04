@@ -1,18 +1,12 @@
 language: ruby
 
 rvm:
-  - 1.9.3
   - 2.2
+  - 2.3
 
 env:
   - REDMINE_REPOS=branches/3.1-stable
   - REDMINE_REPOS=branches/3.0-stable
-  - REDMINE_REPOS=branches/2.6-stable
-
-matrix:
-  exclude:
-    - rvm: 2.2
-      env: REDMINE_REPOS=branches/2.6-stable
 
 gemfile:
   - $REDMINE_PATH/Gemfile
