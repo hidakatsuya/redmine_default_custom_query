@@ -1,0 +1,14 @@
+zh:
+  project_module_default_custom_query: 默认自定义查询
+  permission_manage_default_query: 管理默认查询
+
+  # Labels for projects_default_queries column
+  field_query: 默认自定义查询
+
+  default_custom_query:
+    label_setting: 默认自定义查询
+    label_view_default_issues: 查看默认问题列表
+    label_queries_for_all_projects: 适用于所有项目
+    label_queries_for_current_project: 适用于当前项目
+
+    text_allowed_queries: 公共查询（仅供选择）
