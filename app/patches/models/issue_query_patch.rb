@@ -8,8 +8,6 @@ module DefaultCustomQuery
       unloadable
 
       has_many :projects_default_queries, dependent: :nullify, foreign_key: :query_id
-
-      scope :only_public, -> { where(visibility: Query::VISIBILITY_PUBLIC) }
     end
 
     def public_visibility?
