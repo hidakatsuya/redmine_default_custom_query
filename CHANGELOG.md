@@ -1,3 +1,9 @@
+## 1.3.0
+
+- Support Redmine 3.4 (@maeda-m, @pboese)
+- Support Ruby 2.4 (@maeda-m)
+
+
 ## 1.2.0
 
 - Bug: Fixed CSV export when custom query is used #19 (@sdwolf)
