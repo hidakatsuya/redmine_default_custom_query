@@ -17,7 +17,7 @@ class IssuesWithDefaultQueryTest < Redmine::IntegrationTest
     get project_issues_path(@project)
 
     assert_response :success
-    assert_show_all_issues
+    assert_not_applied_query
   end
 
   def test_basic_features_when_default_query_is_set_in_project
@@ -42,7 +42,7 @@ class IssuesWithDefaultQueryTest < Redmine::IntegrationTest
     get project_issues_path(@project, set_filter: 1, without_default: 1)
 
     assert_response :success
-    assert_show_all_issues
+    assert_not_applied_query
   end
 
   def test_select_other_query
@@ -102,5 +102,23 @@ class IssuesWithDefaultQueryTest < Redmine::IntegrationTest
 
     assert_response :success
     assert_apply_query @default_query
+  end
+
+  def test_select_project_overview_query
+    set_default_query @project, @default_query
+
+    get project_issues_path(@project, set_filter: 1, tracker_id: 1)
+
+    assert_response :success
+    assert_not_applied_query
+  end
+
+  def test_select_multiple_issues_query
+    set_default_query @project, @default_query
+
+    get issues_path(set_filter: 1, issue_id: '1,2,3')
+
+    assert_response :success
+    assert_not_applied_query
   end
 end
