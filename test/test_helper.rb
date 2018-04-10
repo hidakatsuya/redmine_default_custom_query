@@ -33,7 +33,7 @@ module DefaultCustomQuery
       assert_select 'ul.queries a.selected', text: query.name
     end
 
-    def assert_show_all_issues
+    def assert_not_applied_query
       assert_select 'h2', text: l(:label_issue_plural)
       assert_select 'ul.queries a.selected', false
     end
