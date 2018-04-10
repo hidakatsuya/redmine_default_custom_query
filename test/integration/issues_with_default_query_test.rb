@@ -121,4 +121,14 @@ class IssuesWithDefaultQueryTest < Redmine::IntegrationTest
     assert_response :success
     assert_not_applied_query
   end
+
+  def test_select_only_columns_query
+    set_default_query @project, @default_query
+
+    get project_issues_path(@project, set_filter: 1,
+      f: [], c: [ 'subject', 'assigned_to', 'due_date' ])
+
+    assert_response :success
+    assert_not_applied_query
+  end
 end
