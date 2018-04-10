@@ -61,7 +61,7 @@ module DefaultCustomQuery
     end
 
     def filter_applied?
-      params[:set_filter] && params.key?(:op) && params.key?(:f)
+      params[:set_filter]
     end
 
     def filter_cleared?

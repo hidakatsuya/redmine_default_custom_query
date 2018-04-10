@@ -2,13 +2,15 @@
 <%= javascript_tag id: 'add-default-issues-button' do %>
   (function() {
     var allIssuesPath = '<%=j project_issues_path(@project, set_filter: 1) %>';
-  
+
     var showIssuesButton = $('#sidebar a[href="' + allIssuesPath + '"]');
     if (showIssuesButton.size() > 0) {
       showIssuesButton.attr('href', allIssuesPath + '&without_default=1');
     }
-  
-    var showDefaultIssuesButton = $('<a>').attr('href', allIssuesPath)
+
+    var defaultIssuePath = '<%=j project_issues_path(@project, query_id: @project.default_query.id) %>';
+
+    var showDefaultIssuesButton = $('<a>').attr('href', defaultIssuePath)
                                           .text('<%=j l('default_custom_query.label_view_default_issues') %>');
     showIssuesButton.before(showDefaultIssuesButton).before('<br>');
   })();
