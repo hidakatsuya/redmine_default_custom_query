@@ -12,14 +12,12 @@ env:
   - REDMINE_REPOS=branches/3.4-stable
   - REDMINE_REPOS=branches/3.3-stable
 
-gemfile:
-  - $REDMINE_PATH/Gemfile
-
 before_install:
   - export PLUGIN_NAME=redmine_default_custom_query
   - export DB=sqlite
   - export NOKOGIRI_USE_SYSTEM_LIBRARIES=true
   - export REDMINE_PATH=$HOME/redmine
+  - export BUNDLE_GEMFILE=$REDMINE_PATH/Gemfile
   - svn co http://svn.redmine.org/redmine/$REDMINE_REPOS $REDMINE_PATH
   - ln -s $TRAVIS_BUILD_DIR $REDMINE_PATH/plugins/$PLUGIN_NAME
   - cp test/database.travis.yml $REDMINE_PATH/config/database.yml
