@@ -2,13 +2,10 @@ require_dependency 'project'
 
 module DefaultCustomQuery
   module ProjectPatch
-    unloadable
 
     extend ActiveSupport::Concern
 
     included do
-      unloadable
-
       has_many :default_queries, dependent: :delete_all, class_name: 'ProjectsDefaultQuery'
     end
 

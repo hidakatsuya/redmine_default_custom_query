@@ -4,19 +4,16 @@ rvm:
   - 2.2
   - 2.3
   - 2.4
+  - 2.5
+  - 2.6
 
 env:
+  - REDMINE_REPOS=branches/4.0-stable
   - REDMINE_REPOS=branches/3.4-stable
   - REDMINE_REPOS=branches/3.3-stable
-  - REDMINE_REPOS=branches/3.2-stable
-  - REDMINE_REPOS=branches/3.1-stable
 
 gemfile:
   - $REDMINE_PATH/Gemfile
-
-matrix:
-  allow_failures:
-    - rvm: 2.4
 
 before_install:
   - export PLUGIN_NAME=redmine_default_custom_query

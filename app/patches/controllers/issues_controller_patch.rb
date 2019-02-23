@@ -2,15 +2,13 @@ require_dependency 'issues_controller'
 
 module DefaultCustomQuery
   module IssuesControllerPatch
-    unloadable
-
     extend ActiveSupport::Concern
 
     included do
-      unloadable
+      before_action :with_default_query, only: [:index], if: :default_query_module_enabled?
 
-      before_filter :with_default_query, only: [:index], if: :default_query_module_enabled?
-      alias_method_chain :retrieve_query_from_session, :default_custom_query
+      alias_method :retrieve_query_from_session_without_default_custom_query, :retrieve_query_from_session
+      alias_method :retrieve_query_from_session, :retrieve_query_from_session_with_default_custom_query
     end
 
     def with_default_query

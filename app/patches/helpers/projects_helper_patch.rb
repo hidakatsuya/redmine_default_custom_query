@@ -5,8 +5,8 @@ module DefaultCustomQuery
     extend ActiveSupport::Concern
 
     included do
-      unloadable
-      alias_method_chain :project_settings_tabs, :default_query_setting_tab
+      alias_method :project_settings_tabs_without_default_query_setting_tab, :project_settings_tabs
+      alias_method :project_settings_tabs, :project_settings_tabs_with_default_query_setting_tab
     end
 
     def project_settings_tabs_with_default_query_setting_tab
