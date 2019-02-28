@@ -50,8 +50,10 @@ class ManageDefaultQueryTest < Redmine::IntegrationTest
 
     # New setting
     assert_difference -> { @project.default_queries.count }, 1 do
-      xhr :put, default_custom_query_setting_update_path(@project),
-                settings: { query_id: @queries.first.id }
+      put default_custom_query_setting_update_path(@project), params: {
+                settings: { query_id: @queries.first.id },
+                xhr: true
+              }
     end
 
     assert_equal @project.default_query, @queries.first
@@ -60,8 +62,10 @@ class ManageDefaultQueryTest < Redmine::IntegrationTest
 
     # Update
     assert_no_difference -> { @project.default_queries.count } do
-      xhr :put, default_custom_query_setting_update_path(@project),
-                settings: { query_id: @queries.last.id }
+      put default_custom_query_setting_update_path(@project), params: {
+                settings: { query_id: @queries.last.id },
+                xhr: true
+              }
     end
 
     assert_equal @project.default_query, @queries.last
@@ -70,8 +74,10 @@ class ManageDefaultQueryTest < Redmine::IntegrationTest
 
     # Clear
     assert_no_difference -> { @project.default_queries.count } do
-      xhr :put, default_custom_query_setting_update_path(@project),
-                settings: { query_id: '' }
+      put default_custom_query_setting_update_path(@project), params: {
+                settings: { query_id: '' },
+                xhr: true
+                }
     end
 
     assert_nil @project.default_query
@@ -79,8 +85,10 @@ class ManageDefaultQueryTest < Redmine::IntegrationTest
     assert_template partial: 'default_custom_query_setting/_form'
 
     # Update to unselectable query
-    xhr :put, default_custom_query_setting_update_path(@project),
-              settings: { query_id: @unselectable_queries.first.id }
+    put default_custom_query_setting_update_path(@project), params: {
+              settings: { query_id: @unselectable_queries.first.id },
+              xhr: true
+            }
 
     assert_response :success
     assert_template partial: 'default_custom_query_setting/_form'

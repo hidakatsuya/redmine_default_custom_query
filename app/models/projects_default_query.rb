@@ -1,5 +1,4 @@
 class ProjectsDefaultQuery < ActiveRecord::Base
-  unloadable
 
   belongs_to :project
   belongs_to :query, class_name: 'IssueQuery'

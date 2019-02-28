@@ -5,8 +5,6 @@ module DefaultCustomQuery
     extend ActiveSupport::Concern
 
     included do
-      unloadable
-
       has_many :projects_default_queries, dependent: :nullify, foreign_key: :query_id
     end
 

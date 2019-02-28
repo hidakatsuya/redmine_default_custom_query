@@ -1,4 +1,4 @@
-class CreateProjectsDefaultQueries < ActiveRecord::Migration
+class CreateProjectsDefaultQueries < ActiveRecord::Migration[4.2]
   def change
     create_table :projects_default_queries do |t|
       t.belongs_to :project

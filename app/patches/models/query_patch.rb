@@ -5,8 +5,6 @@ module DefaultCustomQuery
     extend ActiveSupport::Concern
 
     included do
-      unloadable
-
       scope :only_public, -> { where(visibility: Query::VISIBILITY_PUBLIC) }
     end
   end

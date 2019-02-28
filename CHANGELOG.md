@@ -1,3 +1,8 @@
+## 1.4.0
+
+- Support only Redmine 4.0 (@marius-balteanu). For older Redmine versions, please use version 1.3.0.
+- Support Ruby 2.5 and 2.6 (@marius-balteanu)
+
 ## 1.3.0
 
 - Support Redmine 3.4 (@maeda-m, @pboese)
