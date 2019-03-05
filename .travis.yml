@@ -9,8 +9,6 @@ rvm:
 
 env:
   - REDMINE_REPOS=branches/4.0-stable
-  - REDMINE_REPOS=branches/3.4-stable
-  - REDMINE_REPOS=branches/3.3-stable
 
 before_install:
   - export PLUGIN_NAME=redmine_default_custom_query

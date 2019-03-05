@@ -1,4 +1,4 @@
-class CreateProjectsDefaultQueries < Rails.version < '5.1' ? ActiveRecord::Migration : ActiveRecord::Migration[4.2]
+class CreateProjectsDefaultQueries < ActiveRecord::Migration[4.2]
   def change
     create_table :projects_default_queries do |t|
       t.belongs_to :project
