@@ -2,16 +2,9 @@ require_dependency 'projects_helper'
 
 module DefaultCustomQuery
   module ProjectsHelperPatch
-    extend ActiveSupport::Concern
 
-    included do
-      alias_method :project_settings_tabs_without_default_query_setting_tab, :project_settings_tabs
-      alias_method :project_settings_tabs, :project_settings_tabs_with_default_query_setting_tab
-    end
-
-    def project_settings_tabs_with_default_query_setting_tab
-      tabs = project_settings_tabs_without_default_query_setting_tab
-
+    def project_settings_tabs
+      tabs = super
       if User.current.allowed_to?(:manage_default_query, @project) &&
           @project.module_enabled?(:default_custom_query)
         tabs << {
@@ -26,6 +19,4 @@ module DefaultCustomQuery
   end
 end
 
-DefaultCustomQuery::ProjectsHelperPatch.tap do |mod|
-  ProjectsHelper.send :include, mod unless ProjectsHelper.include?(mod)
-end
+ProjectsController.send :helper, DefaultCustomQuery::ProjectsHelperPatch
