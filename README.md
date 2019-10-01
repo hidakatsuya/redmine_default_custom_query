@@ -28,6 +28,12 @@ Redmine plugin for setting the default custom query of Issues for each project.
 $ git clone https://github.com/hidakatsuya/redmine_default_custom_query.git /path/to/your-redmine/plugins/redmine_default_custom_query
 ```
 
+Install dependencies:
+
+```
+$ bundle install
+```
+
 Then, migrate:
 
 ```
