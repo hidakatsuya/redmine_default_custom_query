@@ -1,0 +1,14 @@
+es:
+  project_module_default_custom_query: Consulta personalizada por defecto
+  permission_manage_default_query: Gestionar consulta por defecto
+
+  # Labels for projects_default_queries column
+  field_query: Consulta personalizada por defecto
+
+  default_custom_query:
+    label_setting: Consulta personalizada por defecto
+    label_view_default_issues: Ver tareas por defecto
+    label_queries_for_all_projects: Para todos los proyectos
+    label_queries_for_current_project: Para el proyecto actual
+
+    text_allowed_queries: Solo se pueden selecionar consultes públicas (para todos los usuarios)
