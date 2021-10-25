@@ -50,8 +50,7 @@ module DefaultCustomQuery
     def find_default_query
       @project.default_query
     end
-
-    # 여기에 global query가 적용되도록 바꿔야함!
+    
     def apply_default_query!
       default_query = find_default_query
       if default_query
