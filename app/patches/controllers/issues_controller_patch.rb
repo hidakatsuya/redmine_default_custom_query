@@ -51,12 +51,26 @@ module DefaultCustomQuery
       @project.default_query
     end
 
+    # 여기에 global query가 적용되도록 바꿔야함!
     def apply_default_query!
       default_query = find_default_query
       if default_query
         params[:query_id] = default_query.id
+      else
+        apply_global_query!
       end
     end
+
+    def apply_global_query!
+      global_query = ProjectsDefaultQuery.get_global_query()
+      logger.info global_query
+      logger.info global_query.id
+      logger.info global_query.query_id
+      if global_query
+        params[:query_id] = global_query.query_id
+      end
+    end
+
 
     def filter_applied?
       params[:set_filter]

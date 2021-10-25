@@ -1,0 +1,19 @@
+<%= labelled_form_for @current_global_query,
+                      as: :settings,
+                      url: global_default_custom_query_setting_update_path(),
+                      remote: true, method: :put, html: { id: 'default-query-setting' } do |f| %>
+
+  <div class="box tabular">
+    <p>
+      <%= f.select :query_id, options_for_global_queries(), include_blank: true %><br>
+      <em><%=l 'default_custom_query.text_allowed_queries' %></em>
+    </p>
+  </div>
+  <%= submit_tag l(:button_save) %>
+<% end %>
+
+<script>
+  $('#default-query-setting').on('ajax:success', function(data, result, xhr) {
+    $('#tab-content-default_custom_query').html(result);
+  });
+</script>
