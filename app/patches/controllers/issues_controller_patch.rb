@@ -62,9 +62,6 @@ module DefaultCustomQuery
 
     def apply_global_query!
       global_query = ProjectsDefaultQuery.get_global_query()
-      logger.info global_query
-      logger.info global_query.id
-      logger.info global_query.query_id
       if global_query
         params[:query_id] = global_query.query_id
       end
