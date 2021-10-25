@@ -26,6 +26,16 @@ class ProjectsDefaultQuery < ActiveRecord::Base
     super
   end
 
+  def self.get_global_query()
+    current_global_query = where(project_id: -1).first
+    
+    unless current_global_query
+      current_global_query = self.new
+      current_global_query.project_id = -1
+    end
+    current_global_query
+  end
+
   private
 
   def query_must_be_selectable

@@ -50,13 +50,23 @@ module DefaultCustomQuery
     def find_default_query
       @project.default_query
     end
-
+    
     def apply_default_query!
       default_query = find_default_query
       if default_query
         params[:query_id] = default_query.id
+      else
+        apply_global_query!
       end
     end
+
+    def apply_global_query!
+      global_query = ProjectsDefaultQuery.get_global_query()
+      if global_query
+        params[:query_id] = global_query.query_id
+      end
+    end
+
 
     def filter_applied?
       params[:set_filter]

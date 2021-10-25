@@ -9,7 +9,10 @@ Redmine::Plugin.register :redmine_default_custom_query do
 
   project_module :default_custom_query do
     permission :manage_default_query, { default_custom_query_setting: [ :update ] }, require: :member
+    permission :manage_global_default_query, { default_custom_query_setting: [ :index ] }, require: :admin
   end
+  
+  menu :admin_menu, :default_global_custom_query, { controller: 'default_custom_query_setting', action: 'index' }, caption: 'Default Custom Query'
 end
 
 require_relative 'lib/default_custom_query'
